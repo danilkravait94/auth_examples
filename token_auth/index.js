@@ -106,9 +106,9 @@ const users = [
         username: 'Username',
     },
     {
-        login: 'Login1',
-        password: 'Password1',
-        username: 'Username1',
+        login: 'Danil-Krava',
+        password: '040702',
+        username: 'Danil Kravchenko',
     }
 ]
 
