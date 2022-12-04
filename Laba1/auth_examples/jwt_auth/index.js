@@ -14,8 +14,8 @@ const EXPIRATION_TIME = '10s'
 const SESSION_KEY = 'Authorization';
 
 
-function verifyToken(token) {
-    if (token == null) {
+function validateAndGetUser(token) {
+    if (!token) {
         return null;
     }
 
@@ -35,7 +35,7 @@ function verifyToken(token) {
 app.use((req, res, next) => {
   const sessionId = req.get(SESSION_KEY);
 
-  req.username = verifyToken(sessionId);
+  req.username = validateAndGetUser(sessionId);
   req.sessionId = sessionId;
 
   next();
@@ -91,6 +91,7 @@ app.post('/api/login', (req, res) => {
 
     console.log('JWT: ' + token);
     res.json({ token });
+    return;
   }
 
   res.status(401).send();
