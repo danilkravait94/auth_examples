@@ -58,7 +58,7 @@ var options = {
         grant_type: 'password',
         client_id: process.env.CLIENT_ID,
         client_secret: process.env.CLIENT_SECRET,
-        username: 'danilkrava4@gmail.com',
+        username: 'danilkrava4+1@gmail.com',
         password: 'Krava040702',
         scope: 'offline_access'
     }
@@ -70,6 +70,7 @@ request(options, function (error, response, body) {
     const info = JSON.parse(body);
   
     process.env.ACCESS_TOKEN = info.access_token;
+    console.log(info.access_token)
     process.env.REFRESH_TOKEN = info.refresh_token;
     refresh_token()
 });

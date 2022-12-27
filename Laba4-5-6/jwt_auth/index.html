@@ -120,9 +120,10 @@
         const token = sessionStorage.getItem('token');
 
         if (token) {
+            let parsed = JSON.parse(token)
             axios.get('/', {
                 headers: {
-                    Authorization: token
+                    Authorization: `Bearer ${parsed.token}`
                 }
             }).then((response) => {
                 const mainHolder = document.getElementById("main-holder");

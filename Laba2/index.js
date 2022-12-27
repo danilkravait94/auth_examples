@@ -10,7 +10,7 @@ function create_user(token) {
             'Authorization': `Bearer ${token}`
         },
         form: {
-            "email": "danilkrava4@gmail.com",
+            "email": "danilkrava4+1@gmail.com",
             "given_name": "Danil",
             "family_name": "Kravchenko",
             "name": "Danil Kravchenko",
